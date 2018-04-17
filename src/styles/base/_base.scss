@@ -1,0 +1,17 @@
+// set global font size to 62.5% so rem becomes base 10
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: $m-size;
+    color: teal;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
