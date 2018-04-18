@@ -1,17 +1,40 @@
 import { createStore } from 'redux';
 
+// action generators
+
+const incrementCount = ({ incrementBy = 1 } = {}) => ({
+    type: 'INCREMENT',
+    incrementBy
+});
+
+const decrementCount = ({ decrementBy = 1 } = {}) => ({
+    type: 'DECREMENT',
+    decrementBy
+});
+
+const setCount = ({ count = 0 } = {}) => ({
+    type: 'SET',
+    count
+});
+
+const resetCount = () => ({
+    type: 'RESET'
+});
+
 const store = createStore((state={ count:0 }, action ) => {
     // switch is preferable to if-else statements
     switch (action.type) {
         case 'INCREMENT':
-            const incrementBy = typeof action.incrementBy === 'number' ? action.incrementBy : 1
             return {
-                count: state.count + incrementBy
+                count: state.count + action.incrementBy
             };
         case 'DECREMENT':
-            const decrementBy = typeof action.decrementBy === 'number' ? action.decrementBy : 1
             return {
-                count: state.count - decrementBy
+                count: state.count - action.decrementBy
+            };
+        case 'SET':
+            return {
+                count: action.count
             };
         case 'RESET':
             return {
@@ -28,23 +51,32 @@ const unsubscribe = store.subscribe(() => {
     console.log(store.getState());
 });
 
-// Value of action type is all caps by convention
-store.dispatch({
-    type: 'INCREMENT',
-    incrementBy: 5
-});
+store.dispatch(incrementCount({ incrementBy: 4 }));
 
-store.dispatch({
-    type: 'INCREMENT'
-});
+store.dispatch(decrementCount({ decrementBy: 100 }));
+
+store.dispatch(setCount({count: 20}));
+
+store.dispatch(resetCount());
+
+
+// // Value of action type is all caps by convention
+// store.dispatch({
+//     type: 'INCREMENT',
+//     incrementBy: 5
+// });
+
+// store.dispatch({
+//     type: 'INCREMENT'
+// });
 
 // unsubscribe();
 
-store.dispatch({
-    type: 'RESET'
-});
+// store.dispatch({
+//     type: 'RESET'
+// });
 
-store.dispatch({
-    type: 'DECREMENT',
-    decrementBy: 10
-});
+// store.dispatch({
+//     type: 'DECREMENT',
+//     decrementBy: 10
+// });

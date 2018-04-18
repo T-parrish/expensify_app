@@ -2,7 +2,7 @@ const path = require('path')
 console.log(path.join(__dirname, 'public'));
 
 module.exports = {
-    entry: './src/noodling/destructuring.js',
+    entry: './src/noodling/redux-101.js',
     mode: 'development',
     output: {
         path: path.join(__dirname, 'public'),
