@@ -13,11 +13,27 @@ const withAdminWarning = (WrappedComponent) => {
     return (props) => (
         <div>
             <p> This is private info!</p>
-            <WrappedComponent />
+            <WrappedComponent {...props} />
+        </div>
+    );
+};
+
+// requireAuthentication
+// wrapping the ternary operator components in ()
+// allows you to break it into multiple lines for readability
+const requireAuthentication = (WrappedComponent) => {
+    return (props) => (
+        <div>
+            {props.isAuthenticated ? (
+                <WrappedComponent {...props}/>
+            ) : (
+                <p>You need to log in, ya dingus!</p>
+            )}
         </div>
     );
 };
 
 const AdminInfo = withAdminWarning(Info);
+const AuthInfo = requireAuthentication(Info);
 
-ReactDOM.render(<AdminInfo info="there are the details" />, document.getElementById('app'));
+ReactDOM.render(<AuthInfo isAuthenticated={false} info="here's the secret" />, document.getElementById('app'));

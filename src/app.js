@@ -1,8 +1,10 @@
 // Application entry point
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppRouter from './routers/AppRouter.js'
+import { Provider } from 'react-redux';
+import 'react-dates/initialize';
 
+import AppRouter from './routers/AppRouter.js';
 import configureStore from './store/configureStore';
 import { addExpense } from './actions/expenses';
 import { setTextFilter, sortByDate } from './actions/filters';
@@ -18,7 +20,9 @@ const store = configureStore();
 
 store.dispatch(addExpense({ description:'water bill', amount: 2000, createdAt:1000 }));
 store.dispatch(addExpense({ description:'gas bill', amount: 1500, createdAt:2000 }));
-store.dispatch(setTextFilter('bill'));
+store.dispatch(addExpense({ description:'rent', amount: 23456, createdAt:100 }));
+
+// store.dispatch(setTextFilter('gas'));
 console.log(store.getState());
 
 const state = store.getState();
@@ -31,4 +35,11 @@ console.log(visibleExpenses);
 // // getVisibleExpenses -> print to screen
 // console.log(store.getState());
 
-ReactDOM.render(<AppRouter />, document.getElementById('app'));
+
+const jsx = (
+    <Provider store={store}>
+        <AppRouter />
+    </Provider>
+);
+
+ReactDOM.render(jsx, document.getElementById('app'));

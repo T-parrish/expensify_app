@@ -1,9 +1,24 @@
 import React from 'react';
+import { connect } from 'react-router';
+import ExpenseForm from './ExpenseForm';
 
 const EditExpense = () => (
 	<div>
-		<p>This is from my EditExpense component</p>
+		<ExpenseForm
+			onSubmit={() => {
+				console.log('updated, ', expense);
+			}} 
+		/>
 	</div>
 );
 
-export default EditExpense;
+const mapStateToProps = (state, props) => {
+	return {
+		expense: state.expenses.find((expense) => {
+			return expense.id === props.match.params.id;
+		})
+	};
+};
+
+export default connect(mapStateToProps)(EditExpense);
+
