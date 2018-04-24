@@ -5,14 +5,18 @@ import 'react-dates/lib/css/_datepicker.css';
 
 
 export default class ExpenseForm extends React.Component {
-    state = {
-        description: '',
-        note: '',
-        amount: '',
-        createdAt: moment(),
-        calFocused: false,
-        errorState: ''
-    };
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            description: props.expense ? props.expense.description : '',
+            note: props.expense ? props.expense.note : '',
+            amount: props.expense ? (props.expense.amount / 100).toString() : '',
+            createdAt: props.expense ? moment(props.expense.createdAt) : moment(),  
+            calFocused: false,
+            errorState: ''
+        };
+    }
 
     onDescriptionChange = (e) => {
         const description = e.target.value;
@@ -48,7 +52,6 @@ export default class ExpenseForm extends React.Component {
             this.setState(() => ({ errorState: 'Please specify description and amount'}))
         } else {
             this.setState(() => ({ errorState: '' }))
-            console.log('submitted!')
             this.props.onSubmit({
                 description: this.state.description,
                 amount: parseFloat(this.state.amount, 10) * 100,
