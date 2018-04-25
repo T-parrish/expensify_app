@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render expense list item 1`] = `
+<div>
+  <h3>
+    Ramen
+     - 
+    <Link
+      replace={false}
+      to="/edit/1"
+    >
+       edit 
+    </Link>
+     
+  </h3>
+  <p>
+    750
+     - 
+    0
+  </p>
+</div>
+`;
