@@ -5,35 +5,32 @@ exports[`should render Header correctly 1`] = `
   <h1>
     Expensify!
   </h1>
-  <ol>
-    <li>
-      <NavLink
-        activeClassName="is-active"
-        ariaCurrent="true"
-        exact={true}
-        to="/"
-      >
-        Home page
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        activeClassName="is-active"
-        ariaCurrent="true"
-        to="/create"
-      >
-        Create Expense
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        activeClassName="is-active"
-        ariaCurrent="true"
-        to="/help"
-      >
-        Help Page
-      </NavLink>
-    </li>
-  </ol>
+  <NavLink
+    activeClassName="is-active"
+    ariaCurrent="true"
+    exact={true}
+    to="/dashboard"
+  >
+    Dashboard | 
+  </NavLink>
+  <NavLink
+    activeClassName="is-active"
+    ariaCurrent="true"
+    to="/create"
+  >
+    Create Expense | 
+  </NavLink>
+  <NavLink
+    activeClassName="is-active"
+    ariaCurrent="true"
+    to="/help"
+  >
+    Help Page | 
+  </NavLink>
+  <button
+    onClick={[MockFunction]}
+  >
+     Logout 
+  </button>
 </div>
 `;
