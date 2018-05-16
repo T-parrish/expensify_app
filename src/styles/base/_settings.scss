@@ -1,6 +1,13 @@
 // Place to set global style variables
 // Colors
+$dark-grey: #333333;
+$dark-blue: #1f4867;
+$light-blue: rgb(17, 155, 201);
 
+
+// Shadows
+$blue-shadow: darken($dark-blue, 30%);
+$light-blue-shadow: darken($light-blue, 5%);
 
 // Sizing
 $s-size: 1.2rem;
@@ -11,3 +18,8 @@ $xl-size: 6.4rem;
 // Fonts
 $highlight-font: 'Permanent Marker', cursive;
 $main-font: 'Prompt', sans-serif;
+
+// Breakpoints
+$desktop-breakpoint: 1200px;
+$tablet-breakpoint: 900px;
+$mobile-breakpoint: 600px;

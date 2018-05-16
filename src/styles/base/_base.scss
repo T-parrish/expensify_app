@@ -5,15 +5,8 @@ html {
 
 body {
     font-size: $m-size;
-    color: teal;
-}
-
-button {
-    cursor: pointer;
-}
-
-button:disabled {
-    cursor: default;
+    color: $dark-grey;
+    line-height: 1.6;
 }
 
 .is-active {
