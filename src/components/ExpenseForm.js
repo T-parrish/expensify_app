@@ -62,21 +62,20 @@ export default class ExpenseForm extends React.Component {
 
     render() {
         return (
-            <div className="content-container">
-                <h2>Enter your expenses</h2>
-                {this.state.errorState.length > 0 && <p>{this.state.errorState}</p>}
-                <form onSubmit={this.onSubmit}>
+            <form className="form" onSubmit={this.onSubmit}>
+                {this.state.errorState.length > 0 && <p className="form__error">{this.state.errorState}</p>}
+                <input
+                    type="text"
+                    className="text-input"
+                    placeholder="Description"
+                    autoFocus
+                    value={this.state.description}
+                    onChange={this.onDescriptionChange}
+                />
+                <div className="form__sub">
                     <input
                         type="text"
-                        className="text-input"
-                        placeholder="Description"
-                        autoFocus
-                        value={this.state.description}
-                        onChange={this.onDescriptionChange}
-                    />
-                    <input
-                        type="text"
-                        className="text-input"
+                        className="text-input__amount"
                         placeholder="Amount"
                         value={this.state.amount}
                         onChange={this.onAmountChange}
@@ -89,16 +88,16 @@ export default class ExpenseForm extends React.Component {
                         numberOfMonths={1}
                         isOutsideRange={() => false}
                     />
-                    <textarea
-                        placeholder="add a note for your expense"
-                        className="text-area"
-                        value={this.state.note}
-                        onChange={this.onNoteChange}
-                    >
-                    </textarea>
-                    <button>Add Expense</button>
-                </form>
-            </div>
+                </div>
+                <textarea
+                    placeholder="add a note for your expense"
+                    className="text-area"
+                    value={this.state.note}
+                    onChange={this.onNoteChange}
+                >
+                </textarea>
+                <button className="button--submit">Add Expense</button>
+            </form>
         )
     }
 }

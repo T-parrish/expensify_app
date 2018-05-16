@@ -56,3 +56,13 @@
 .button--logout:hover {
     border-bottom: 1px solid white;
 }
+
+.button--submit {
+    @extend .button_two;
+    margin-top: 20px;
+    border: none;
+}
+
+.button--submit:focus {
+    outline: none;
+}
