@@ -1,21 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ExpenseForm with expense data 1`] = `
-<div>
-  <h2>
-    ExpenseForm
-  </h2>
-  <form
-    onSubmit={[Function]}
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Description"
+    type="text"
+    value="Sushi"
+  />
+  <div
+    className="form__sub"
   >
     <input
-      autoFocus={true}
-      onChange={[Function]}
-      placeholder="Description"
-      type="text"
-      value="Sushi"
-    />
-    <input
+      className="text-input__amount"
       onChange={[Function]}
       placeholder="Amount"
       type="text"
@@ -108,34 +110,41 @@ exports[`should render ExpenseForm with expense data 1`] = `
       withFullScreenPortal={false}
       withPortal={false}
     />
-    <textarea
-      onChange={[Function]}
-      placeholder="add a note for your expense"
-      value=""
-    />
-    <button>
-      Add Expense
+  </div>
+  <textarea
+    className="text-area"
+    onChange={[Function]}
+    placeholder="add a note for your expense"
+    value=""
+  />
+  <div>
+    <button
+      className="button--submit"
+    >
+      Save Expense
     </button>
-  </form>
-</div>
+  </div>
+</form>
 `;
 
 exports[`should render error for invalid form submission 1`] = `
-<div>
-  <h2>
-    ExpenseForm
-  </h2>
-  <form
-    onSubmit={[Function]}
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Description"
+    type="text"
+    value=""
+  />
+  <div
+    className="form__sub"
   >
     <input
-      autoFocus={true}
-      onChange={[Function]}
-      placeholder="Description"
-      type="text"
-      value=""
-    />
-    <input
+      className="text-input__amount"
       onChange={[Function]}
       placeholder="Amount"
       type="text"
@@ -228,37 +237,46 @@ exports[`should render error for invalid form submission 1`] = `
       withFullScreenPortal={false}
       withPortal={false}
     />
-    <textarea
-      onChange={[Function]}
-      placeholder="add a note for your expense"
-      value=""
-    />
-    <button>
-      Add Expense
+  </div>
+  <textarea
+    className="text-area"
+    onChange={[Function]}
+    placeholder="add a note for your expense"
+    value=""
+  />
+  <div>
+    <button
+      className="button--submit"
+    >
+      Save Expense
     </button>
-  </form>
-</div>
+  </div>
+</form>
 `;
 
 exports[`should render error for invalid form submission 2`] = `
-<div>
-  <h2>
-    ExpenseForm
-  </h2>
-  <p>
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <p
+    className="form__error"
+  >
     Please specify description and amount
   </p>
-  <form
-    onSubmit={[Function]}
+  <input
+    autoFocus={true}
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Description"
+    type="text"
+    value=""
+  />
+  <div
+    className="form__sub"
   >
     <input
-      autoFocus={true}
-      onChange={[Function]}
-      placeholder="Description"
-      type="text"
-      value=""
-    />
-    <input
+      className="text-input__amount"
       onChange={[Function]}
       placeholder="Amount"
       type="text"
@@ -351,34 +369,41 @@ exports[`should render error for invalid form submission 2`] = `
       withFullScreenPortal={false}
       withPortal={false}
     />
-    <textarea
-      onChange={[Function]}
-      placeholder="add a note for your expense"
-      value=""
-    />
-    <button>
-      Add Expense
+  </div>
+  <textarea
+    className="text-area"
+    onChange={[Function]}
+    placeholder="add a note for your expense"
+    value=""
+  />
+  <div>
+    <button
+      className="button--submit"
+    >
+      Save Expense
     </button>
-  </form>
-</div>
+  </div>
+</form>
 `;
 
 exports[`should render the expense form 1`] = `
-<div>
-  <h2>
-    ExpenseForm
-  </h2>
-  <form
-    onSubmit={[Function]}
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Description"
+    type="text"
+    value=""
+  />
+  <div
+    className="form__sub"
   >
     <input
-      autoFocus={true}
-      onChange={[Function]}
-      placeholder="Description"
-      type="text"
-      value=""
-    />
-    <input
+      className="text-input__amount"
       onChange={[Function]}
       placeholder="Amount"
       type="text"
@@ -471,14 +496,19 @@ exports[`should render the expense form 1`] = `
       withFullScreenPortal={false}
       withPortal={false}
     />
-    <textarea
-      onChange={[Function]}
-      placeholder="add a note for your expense"
-      value=""
-    />
-    <button>
-      Add Expense
+  </div>
+  <textarea
+    className="text-area"
+    onChange={[Function]}
+    placeholder="add a note for your expense"
+    value=""
+  />
+  <div>
+    <button
+      className="button--submit"
+    >
+      Save Expense
     </button>
-  </form>
-</div>
+  </div>
+</form>
 `;

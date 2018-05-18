@@ -39,7 +39,7 @@
 .button_two:active {
     box-shadow: 0px 0px $light-blue-shadow;
     top: 4.5px;
-  }
+}
 
 .button--logon {
     transition: all 0.15s ease-in-out;
@@ -59,10 +59,37 @@
 
 .button--submit {
     @extend .button_two;
-    margin-top: 20px;
     border: none;
 }
 
 .button--submit:focus {
+    outline: none;
+}
+
+.button_three {
+    padding: 12px 24px;
+    cursor: pointer;
+    background: $light-red;
+    color: white;
+    position: relative;
+    font-size: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px $light-red-shadow;
+    font-family: $main-font;
+    display: inline-block;
+    border: none;
+}
+
+.button_three:hover {
+    box-shadow: 0px 3px $light-red-shadow;
+    top: 1px;
+}
+
+.button_three:active {
+    box-shadow: 0px 0px $light-red-shadow;
+    top: 4.5px;
+}
+
+.button_three:focus {
     outline: none;
 }

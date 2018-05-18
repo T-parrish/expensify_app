@@ -1,0 +1,107 @@
+.loader-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.loaderBall {
+    border: 16px solid $light-blue;
+    width: 10px;
+    height: 10px;
+    margin: 0 20px;
+    position: relative;
+    border-radius: 50px;
+}
+
+.loaderBall__one {
+    @extend .loaderBall;
+    animation-name: bounceOne;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.loaderBall__two {
+    @extend .loaderBall;
+    animation-name: bounceTwo;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: .2s;
+}
+
+.loaderBall__three {
+    @extend .loaderBall;
+    animation-name: bounceThree;
+    animation-duration: 2s;
+    animation-delay: .4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounceOne {
+    20% {
+        transform: translate(36px, -50px);
+    }
+    35% {
+        transform: translate(72px, 0px);
+    }
+
+    50% {
+        transform: translate(108px, -50px);
+    }
+    65% {
+        transform: translate(144px, 0px);
+    }
+    80% {
+        transform: translate(72px, -50px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes bounceTwo {
+    20% {
+        transform: translate(36px, -50px);
+    }
+    35% {
+        transform: translate(72px, 0px);
+    }
+    50% {
+        transform: translate(0px, -50px);
+    }
+    65% {
+        transform: translate(-72px, 0px);
+    }
+    80% {
+        transform: translate(-36px, -50px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes bounceThree {
+    20% {
+        transform: translate(-72px, -50px);
+    }
+    35% {
+        transform: translate(-144px, 0px);
+    }
+    50% {
+        transform: translate(-108px, -50px);
+    }
+    65% {
+        transform: translate(-72px, 0px);
+    }
+    80% {
+        transform: translate(-36px, -50px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}

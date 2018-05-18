@@ -1,0 +1,159 @@
+.loader-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: darken($off-white, 5%);
+}
+
+.animation-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.loader__title {
+    margin-top: $m-size;
+    text-align: center;
+    color: $grey;
+    font-weight: 300;
+    font-size: 8px;
+    font-family: $main-font;
+}
+
+$an-length: 2s;
+$an-delay: $an-length / 10;
+$an-timing: cubic-bezier(.27,.89,.37,.05) ;
+//cubic-bezier(0,.54,1,.23)
+//cubic-bezier(.26,.4,0,1.25)
+//cubic-bezier(.06,-0.09,.08,1.05)
+// cubic-bezier(.04,1.09,.79,1.69)
+// cubic-bezier(.04,1.09,.35,1.78)
+
+
+.loaderBall {
+    border: 1px solid $light-blue;
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    position: relative;
+    border-radius: 50px;
+    animation-name: bounce;
+    animation-duration: $an-length;
+    animation-timing-function: $an-timing;
+    background: $light-blue;
+    animation-iteration-count: infinite;
+}
+
+.loaderBall__one {
+    @extend .loaderBall;
+}
+
+.loaderBall__two {
+    @extend .loaderBall;
+    animation-delay: $an-delay;
+}
+
+.loaderBall__three {
+    @extend .loaderBall;
+    animation-delay: $an-delay * 2;
+ 
+}
+
+.loaderBall__four {
+    @extend .loaderBall;
+    animation-delay: $an-delay * 3;
+}
+
+.loaderBall__five {
+    @extend .loaderBall;
+    animation-delay: $an-delay *4 ;
+}
+
+.shadow {
+    height: 2px;
+    width: 15px;
+    border-radius: 1000%;
+    background: lighten($grey,5%);
+    animation-name: shadow;
+    animation-duration: $an-length;
+    animation-timing-function: $an-timing;
+    animation-iteration-count: infinite;
+    position: relative;
+    margin: 10px auto;
+    margin-bottom: 0;
+    box-shadow: 0px 0px 3px darken($grey, 20%);
+}
+
+.shadow__one {
+    @extend .shadow;
+}
+
+.shadow__two {
+    @extend .shadow;
+    animation-delay: $an-delay;
+}
+
+.shadow__three {
+    @extend .shadow;
+    animation-delay: $an-delay * 2;
+}
+
+.shadow__four {
+    @extend .shadow;
+    animation-delay: $an-delay * 3;
+}
+
+.shadow__five {
+    @extend .shadow;
+    animation-delay: $an-delay * 4;
+}
+
+@keyframes bounce {
+    0% {
+        background: darken($light-blue, 7%);
+    }
+    25% {
+        transform: translateY(-50px);
+        background: lighten($light-blue, 40%)
+    }
+    50% {
+        transform: translateY(0px);
+        background: darken($light-blue, 7%);
+    }
+    75% {
+        transform: translateY(-50px);
+        background: lighten($light-blue, 40%);
+    }
+    100% {
+        transform: translateY(0px);
+        background: darken($light-blue, 7%);    
+    }
+}
+
+@keyframes shadow {
+    0% {
+
+    }
+    25% {
+        opacity: 0.3;
+        transform: scale(.6, .6);
+    }
+    50% {
+        opacity: .8;
+        transform: scale(1, 1);
+        transform-origin: center;
+    }
+    75% {
+        opacity: 0.3;
+        transform: scale(.6, .6);
+        transform-origin: center;
+    }
+    100% {
+        opacity: .8;
+        transform: scale(1, 1);
+        transform-origin: center;
+    }
+}
