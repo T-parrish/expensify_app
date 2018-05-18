@@ -14,3 +14,10 @@
         margin-bottom: 0;
     }
 }
+
+.input-sub {
+    display: flex;
+    > * {
+        margin-right: $m-size;
+    }
+}

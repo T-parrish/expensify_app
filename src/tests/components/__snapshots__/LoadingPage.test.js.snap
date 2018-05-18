@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should correctly render Login Page component 1`] = `
+<div
+  className="loader-container"
+>
+  <div
+    className="animation-wrapper"
+  >
+    <div
+      className="wrapper"
+    >
+      <div
+        className="loaderBall__one"
+      />
+      <div
+        className="shadow__one"
+      />
+    </div>
+    <div
+      className="wrapper"
+    >
+      <div
+        className="loaderBall__two"
+      />
+      <div
+        className="shadow__two"
+      />
+    </div>
+    <div
+      className="wrapper"
+    >
+      <div
+        className="loaderBall__three"
+      />
+      <div
+        className="shadow__three"
+      />
+    </div>
+    <div
+      className="wrapper"
+    >
+      <div
+        className="loaderBall__four"
+      />
+      <div
+        className="shadow__four"
+      />
+    </div>
+    <div
+      className="wrapper"
+    >
+      <div
+        className="loaderBall__five"
+      />
+      <div
+        className="shadow__five"
+      />
+    </div>
+  </div>
+  <div
+    className="loader__title"
+  >
+    <h1>
+      Loading...
+    </h1>
+  </div>
+</div>
+`;
